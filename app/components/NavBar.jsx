@@ -4,7 +4,7 @@ import React from "react";
 const NavBar = () => {
   return (
     <>
-      <nav className="container mx-auto space-x-3">
+      <nav className="container text-center mx-auto space-x-3">
         <Link href={"/"}>Home</Link>
         <Link href={"/profile"}>Profile</Link>
       </nav>
