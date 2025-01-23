@@ -14,7 +14,9 @@ const NavBar = async () => {
     <div className="bg-white">
       <nav className="container  text-center mx-auto py-4 flex justify-between">
         <div>
-          <h2 className="font-bold md:text-lg  text-[#F13B3B]">BlogVault</h2>
+          <Link href={"/"}>
+            <h2 className="font-bold md:text-lg  text-[#F13B3B]">BlogVault</h2>
+          </Link>
         </div>
         <div className="space-x-1 md:space-x-0">
           <Link className="hover:bg-gray-200 md:px-3 py-1 rounded" href={"/"}>
