@@ -6,7 +6,7 @@ export default async function Home() {
 
   return (
     <main>
-      <div>
+      <div className="max-w-3xl">
         <h1 className="text-center text-2xl font-bold my-6">Blog Posts</h1>
         <ul className="text-center px-6">
           {posts.map((post, index) => (
