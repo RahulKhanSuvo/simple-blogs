@@ -8,10 +8,9 @@ async function Profile() {
   if (!isUserAuthenticated) {
     redirect("/api/auth/login");
   }
-  console.log("asay", isUserAuthenticated, user);
   return (
     <div className="text-center">
-      <h3>Hi {user.family_name}</h3>
+      <h3>Hi {user.family_name || "use"}</h3>
       <p>Welcome to your Profile</p>
     </div>
   );
