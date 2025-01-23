@@ -9,7 +9,6 @@ import {
 } from "@kinde-oss/kinde-auth-nextjs";
 const NavBar = () => {
   const { isAuthenticated, user } = useKindeAuth();
-  console.log(isAuthenticated);
   return (
     <>
       <nav className="container text-center mx-auto space-x-3 flex justify-center">
