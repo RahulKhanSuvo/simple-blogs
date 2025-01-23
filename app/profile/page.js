@@ -11,7 +11,12 @@ async function Profile() {
   return (
     <div className="text-center container md:mx-auto  bg-white mt-10">
       <div className="">
-        <h3>Hi {user.family_name || "use"}</h3>
+        <h3 className="text-lg">
+          Hi{" "}
+          <span className="text-[#F13B3B] font-bold ">
+            {user.family_name || "user"}
+          </span>
+        </h3>
         <p>Welcome to your Profile</p>
       </div>
     </div>
