@@ -7,7 +7,7 @@ export default async function Home() {
   return (
     <main>
       <div className="container  mt-10 md:mx-auto bg-white">
-        <h1 className="text-center text-2xl font-bold ">Blog Posts</h1>
+        <h1 className="text-center pt-4 text-2xl font-bold ">Blog Posts</h1>
         <ul className="text-center px-6">
           {posts.map((post, index) => (
             <li key={post.id}>
