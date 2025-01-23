@@ -8,11 +8,14 @@ export default async function Home() {
     <main>
       <div>
         <h1 className="text-center text-2xl font-bold my-6">Blog Posts</h1>
-        <ul className="space-y-4 px-6">
-          {posts.map((post) => (
+        <ul className="text-center px-6">
+          {posts.map((post, index) => (
             <li key={post.id}>
               <Link href={`/blog/${post.id}`}>
-                <p className="text-blue-500">{post.title}</p>
+                <p className="hover:text-[#F13B3B]">
+                  <span> {index + 1} </span>
+                  {post.title}
+                </p>
               </Link>
             </li>
           ))}
