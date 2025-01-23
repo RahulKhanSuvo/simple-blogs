@@ -1,27 +1,28 @@
-"use client";
-import Link from "next/link";
-import React from "react";
 import {
+  getKindeServerSession,
   LoginLink,
   LogoutLink,
   RegisterLink,
-  useKindeAuth,
-} from "@kinde-oss/kinde-auth-nextjs";
-const NavBar = () => {
-  const { isAuthenticated, user } = useKindeAuth();
+} from "@kinde-oss/kinde-auth-nextjs/server";
+
+import Link from "next/link";
+import React from "react";
+const NavBar = async () => {
+  const { isAuthenticated } = getKindeServerSession();
+  const isUserAuthenticated = await isAuthenticated();
   return (
     <>
       <nav className="container text-center mx-auto space-x-3 flex justify-center">
         <Link href={"/"}>Home</Link>
         <Link href={"/profile"}>Profile</Link>
-        {isAuthenticated ? (
+        {isUserAuthenticated ? (
           <>
-            <LogoutLink>Log out</LogoutLink>
+            <LogoutLink>Logout</LogoutLink>
           </>
         ) : (
           <>
-            <LoginLink>Sign In</LoginLink>
-            <RegisterLink>Sign Up</RegisterLink>
+            <LoginLink>Sign in </LoginLink>
+            <RegisterLink>Sign up</RegisterLink>
           </>
         )}
       </nav>
