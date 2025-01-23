@@ -1,14 +1,30 @@
+"use client";
 import Link from "next/link";
 import React from "react";
-import AuthLinks from "./AuthLinks";
-
+import {
+  LoginLink,
+  LogoutLink,
+  RegisterLink,
+  useKindeAuth,
+} from "@kinde-oss/kinde-auth-nextjs";
 const NavBar = () => {
+  const { isAuthenticated, user } = useKindeAuth();
+  console.log(isAuthenticated);
   return (
     <>
       <nav className="container text-center mx-auto space-x-3 flex justify-center">
         <Link href={"/"}>Home</Link>
         <Link href={"/profile"}>Profile</Link>
-        <AuthLinks></AuthLinks>
+        {isAuthenticated ? (
+          <>
+            <LogoutLink>Log out</LogoutLink>
+          </>
+        ) : (
+          <>
+            <LoginLink>Sign In</LoginLink>
+            <RegisterLink>Sign Up</RegisterLink>
+          </>
+        )}
       </nav>
     </>
   );
