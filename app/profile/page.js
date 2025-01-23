@@ -9,9 +9,11 @@ async function Profile() {
     redirect("/api/auth/login");
   }
   return (
-    <div className="text-center bg-white mt-10">
-      <h3>Hi {user.family_name || "use"}</h3>
-      <p>Welcome to your Profile</p>
+    <div className="text-center container md:mx-auto  bg-white mt-10">
+      <div className="">
+        <h3>Hi {user.family_name || "use"}</h3>
+        <p>Welcome to your Profile</p>
+      </div>
     </div>
   );
 }

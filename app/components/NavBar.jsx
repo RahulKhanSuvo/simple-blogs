@@ -12,13 +12,22 @@ const NavBar = async () => {
   const isUserAuthenticated = await isAuthenticated();
   return (
     <div className="bg-white">
-      <nav className=" container  text-center mx-auto py-4 flex justify-between">
+      <nav className="container  text-center mx-auto py-4 flex justify-between">
         <div>
-          <h2 className="font-bold text-[#F13B3B]">BlogVault</h2>
+          <h2 className="font-bold hover:bg-gray-500 text-[#F13B3B]">
+            BlogVault
+          </h2>
         </div>
-        <div className="space-x-3">
-          <Link href={"/"}>Home</Link>
-          <Link href={"/profile"}>Profile</Link>
+        <div className="">
+          <Link className="hover:bg-gray-200 px-3 py-1 rounded" href={"/"}>
+            Home
+          </Link>
+          <Link
+            className="hover:bg-gray-200 px-3 py-1 rounded"
+            href={"/profile"}
+          >
+            Profile
+          </Link>
         </div>
         <div>
           {isUserAuthenticated ? (
@@ -28,10 +37,14 @@ const NavBar = async () => {
               </LogoutLink>
             </>
           ) : (
-            <>
-              <LoginLink>Sign in</LoginLink>
-              <RegisterLink>Sign up</RegisterLink>
-            </>
+            <div className="space-x-2">
+              <LoginLink className=" px-2 py-1 rounded shadow-md shadow-[#ddddff] bg-[#ddddff] ">
+                Sign in
+              </LoginLink>
+              <RegisterLink className=" px-2 py-1 rounded shadow-md shadow-[#37375e] bg-[#212138] text-white ">
+                Sign up
+              </RegisterLink>
+            </div>
           )}
         </div>
       </nav>
